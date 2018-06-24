@@ -1,0 +1,13 @@
+﻿@model ServiceProvider.Models.Transport
+@{
+    ViewBag.Title = "Update";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    @Html.Partial("_TransportField")
+
+    <button class="btn btn-info button"> Update </button>
+    <button class="btn btn-danger button"> Cancel </button>
+}

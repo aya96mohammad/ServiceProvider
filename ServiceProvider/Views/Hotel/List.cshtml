@@ -1,0 +1,48 @@
+﻿@model List<ServiceProvider.Models.Hotel>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Hotel Services</h2>
+
+
+
+<a class="btn btn-info pull-right" href="/Hotel/Create">
+    Add
+</a>
+<table class="col-sm-12 table table-hover ">
+    <thead>
+        <tr>
+            <th>Service Name</th>
+            <th>Service Type</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var H in Model)
+        {
+        <tr>
+            
+            <td>@H.ServiceName</td>
+            <td>@H.ServiceType</td>
+            <td>@H.City</td>
+            <td>@H.Country</td>
+            <td>
+                <a href="/Hotel/Update/@H.Id" role="button" class="btn btn-info">
+                <i class="fa fa-pencil" ></i>
+                </a>
+            </td>
+            <td><form action="/Hotel/Delete/@H.Id " method="post"> <input type="hidden" name="id" value="@H.Id" />
+                <button><i class="fa fa-trash"></i></button>
+                </form></td>
+            
+        </tr>
+        }
+       
+    </tbody>
+</table>
+
+

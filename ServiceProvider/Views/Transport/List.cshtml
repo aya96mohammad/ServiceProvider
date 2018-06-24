@@ -1,0 +1,43 @@
+﻿@model List<ServiceProvider.Models.Transport>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Transport Services</h2>
+
+
+
+<a class="btn btn-info pull-right" href="/Transport/Create">
+    Add
+</a>
+<table class="col-sm-12 table table-hover ">
+    <thead>
+        <tr>
+            <th>Service Name</th>
+            <th>Service Type</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var T in Model)
+    {
+        <tr>
+          
+            <td>@T.ServiceName</td>
+            <td>@T.ServiceType</td>
+            <td>@T.City</td>
+            <td>@T.Country</td>
+            <td><a href="/Transport/Update/@T.Id" role="button" class="btn btn-info">
+    <i class="fa fa-pencil"></i>
+</a></td>
+            <td><form action="/Transport/Delete/@T.Id"><button><i class="fa fa-trash"></i></button></form></td>
+        </tr>
+}
+
+    </tbody>
+</table>
+
+

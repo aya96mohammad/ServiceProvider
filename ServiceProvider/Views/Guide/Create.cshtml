@@ -1,0 +1,14 @@
+﻿@model ServiceProvider.Models.Guide
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Guide Services</h2>
+@using (Html.BeginForm())
+{
+
+    @Html.Partial("_GuideField")
+
+<button class="btn btn-info button" > Create </button>
+<button class="btn btn-danger button"> Cancel </button>
+}

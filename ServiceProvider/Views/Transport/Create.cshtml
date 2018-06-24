@@ -1,0 +1,17 @@
+﻿@model ServiceProvider.Models.Transport
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Service</h2>
+
+@using (Html.BeginForm())
+{
+
+
+    @Html.Partial("_TransportField")
+
+    <button class="btn btn-info button"> Create </button>
+    <button class="btn btn-danger button"> Cancel </button>
+
+}

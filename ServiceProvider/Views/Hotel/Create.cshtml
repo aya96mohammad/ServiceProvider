@@ -1,0 +1,15 @@
+﻿@model ServiceProvider.Models.Hotel
+@{
+    ViewBag.Title = "Create Services";
+}
+<h2>Create Service</h2>
+
+
+@using (Html.BeginForm())
+{ 
+
+@Html.Partial("_HotelField")
+
+<button class="btn btn-info button"> Create </button>
+<button class="btn btn-danger button"> Cancel </button>
+}

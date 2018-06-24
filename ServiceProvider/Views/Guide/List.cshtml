@@ -1,0 +1,45 @@
+﻿@model List<ServiceProvider.Models.Guide>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Guide Services </h2>
+
+
+
+<a class="btn btn-info pull-right" href="/Guide/Create">
+    Add
+</a>
+<table class="col-sm-12 table table-hover ">
+    <thead>
+        <tr>
+            <th>Service Name</th>
+            <th>Service Type</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var G in Model)
+    {
+        <tr>
+           
+            <td>@G.ServiceName</td>
+            <td>@G.ServiceType</td>
+            <td>@G.City</td>
+            <td>@G.Country</td>
+            <td><a href="/Guide/Update/@G.Id" role="button" class="btn btn-info">
+    <i class="fa fa-pencil"></i>
+</a></td>
+            <td><form action="/Guide/Delete/@G.Id"><button><i class="fa fa-trash"></i></button></form></td>
+        </tr>
+}
+
+    </tbody>
+</table>
+
+
+
+

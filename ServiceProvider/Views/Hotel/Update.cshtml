@@ -1,0 +1,19 @@
+﻿@model ServiceProvider.Models.Hotel
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update Service</h2>
+
+@using (Html.BeginForm())
+{
+
+
+
+@Html.HiddenFor(model => model.Id)
+@Html.Partial("_HotelField")
+
+<button class="btn btn-info button"> Update </button>
+<button class="btn btn-danger button"> Cancel </button>
+
+}
